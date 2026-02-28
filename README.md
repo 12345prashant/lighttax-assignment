@@ -47,20 +47,17 @@ Step 2: Install dependecies: pip install langchain langchain-cohere pydantic PyP
 Step 3: python main.py
 
 
-**How did you break down the paper into implementable pieces? What was your plan
-before you started coding? **
+**How did you break down the paper into implementable pieces? What was your plan before you started coding? **
 
 My Idea was to build a Supervisor agent that will control the subagents ( schedule_c , schedule_1, Form 1040) . First I thaught that we need to use a langgraph but later i realized that the flow is fixed , for example first the schedule_agent will be invoked its output will be feeded to schedule_1 and than further this goes on. So I changed my plan to use langchain because the workflow is fixed. 
 My approach was to build a rag pipleline such that during chunking the instructions pdf we will store some metadata like file_name , page number etc. So we can use that same rag pipeline for each subagent . We can apply filtering over chunks before retrieving instructions , for eg. if the schedule_c agent is running than we will apply filtering over chunks such that the response is generated only from schedule_c instructions pdf. 
 The response from sub agents will be passed in chain and at the end form_1040 will use pre defined determinstic tools to calculate tax. 
 
-**How did you model the dependency graph between forms? Did you think in terms of a
-DAG, a pipeline, message passing? **
+**How did you model the dependency graph between forms? Did you think in terms of a DAG, a pipeline, message passing? **
 
 Yes, My thinking was to follow a rag pipeline by retrieving data by applying pre filtering . A pipeline where all the 3 agents is connected in chain based structure and the output is passed node by node. 
 
-**What was your strategy for grounding LLM reasoning in IRS instructions? How did you
-decide what context to feed the model? **
+**What was your strategy for grounding LLM reasoning in IRS instructions? How did you decide what context to feed the model? **
 
 My thinking was that , give llm a large amount of context to avoid hallucinations. For each subagent i have attached a system prompt ( for eg. You are IRS Schedule C expert.
 
