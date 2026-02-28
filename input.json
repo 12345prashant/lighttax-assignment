@@ -1,0 +1,15 @@
+{
+  "name": "Prashant Tripathi",
+  "filing_status": "single",
+
+  "w2_income": 50000,
+
+  "business_income": 20000,
+  "business_expenses": 5000,
+
+  "unemployment_compensation": 3000,
+
+  "student_loan_interest_paid": 2000,
+
+  "has_self_employment": true
+}
