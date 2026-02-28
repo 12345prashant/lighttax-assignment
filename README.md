@@ -2,6 +2,11 @@
 
 https://drive.google.com/file/d/15ZlLU44XlrYHls6n6ojPB8gz1IyOOUH_/view?usp=sharing
 
+<img width="749" height="547" alt="Screenshot 2026-02-28 175908" src="https://github.com/user-attachments/assets/94c30c64-5648-428a-bd1e-c37e74fe76b3" />
+
+
+
+
 **System Architecture**
 
 The system follows a pipeline-based architecture.
