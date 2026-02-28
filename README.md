@@ -1,4 +1,4 @@
-System Architecture
+**System Architecture**
 
 The system follows a pipeline-based architecture.
 
